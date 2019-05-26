@@ -1,7 +1,7 @@
 (function (dlut) {
     dlut.router = new VueRouter({
         routes: [
-            {path: '/', component: dlut.views.homePage}
+            {path: '/aa', component: dlut.views.homePage}
         ]
     })
 })(dlut)

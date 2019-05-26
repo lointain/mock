@@ -1,5 +1,5 @@
-(function (template) {
+(function (tpl) {
     Vue.component('demoComponent', {
-        template: template('components/demoComponent')
+        template: tpl('demoComponent')
     })
-})()
+})(dlut.tpl('components'))

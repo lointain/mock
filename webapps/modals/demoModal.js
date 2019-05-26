@@ -1,7 +1,5 @@
-(function (modals) {
+(function (modals, tpl) {
     modals.demoModal = {
-        template:`
-            <div>home</div>
-        `
+        template: tpl('demoModal')
     }
-})(dlut.modals)
+})(dlut.modals, dlut.tpl('views'))

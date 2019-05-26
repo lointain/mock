@@ -123,7 +123,9 @@
             }
         }
     }
-    dlut.tpl = function (url) {
-        return dlut.template[url + '.html']
+    dlut.tpl = function (type) {
+        return function (url) {
+            return dlut.templates[type + '/' + url + '.html']
+        }
     }
 })(dlut)

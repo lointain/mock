@@ -5,13 +5,8 @@
 </head>
 <body>
 <div id="app">
+    <router-view></router-view>
 </div>
-<script type="x-template" id="test1">
-    <div>
-        <router-view></router-view>
-        <Button type="primary">Primary</Button>
-    </div>
-</script>
 </body>
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/vue-router/3.0.6/vue-router.min.js"></script>
@@ -26,7 +21,8 @@
         modals: {}, // 模态框
         plugins: {}, // 插件
         utils: null,
-        config: {}
+        config: {},
+        templates: {}
     }
 </script>
 <script src="utils.js"></script>
@@ -34,7 +30,6 @@
 <!-- endinject -->
 <!-- inject:vue -->
 <!-- endinject -->
-<script src="api.js"></script>
 <script src="router.js"></script>
 <script src="app.js"></script>
 </html>

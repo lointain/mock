@@ -1,8 +1,8 @@
-(function (views, template) {
+(function (views, tpl) {
     views.homePage = {
-        template: '<div>home</div>',
+        template: tpl('homePage'),
         created: function () {
             debugger
         }
     }
-})(dlut.views, dlut.template)
+})(dlut.views, dlut.tpl('views'))
