@@ -1,1 +1,7 @@
-<div>demoModald</div>
+<div>
+    <Modal @on-ok="handleOk"
+           @on-cancel="handleClose"
+           v-model="show" title="Welcome">
+        demoModal
+    </Modal>
+</div>

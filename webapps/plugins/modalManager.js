@@ -39,5 +39,5 @@
                 this.$emit('modalClose', data)
             }
         }
-    }, modals)
+    }, {modals})
 })(dlut.plugins, dlut.modals)
