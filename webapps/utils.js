@@ -128,4 +128,8 @@
             return dlut.templates[type + '/' + url + '.html']
         }
     }
+    dlut.api.ajax = axios.create({
+        baseURL: dlut.config.baseUrl,
+        timeout: 1000,
+    })
 })(dlut)
