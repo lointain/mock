@@ -1,26 +1,38 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models')
+var {Project} = require('../models')
 
 /**
  * 返回project列表
  * @return projectList
  */
 router.get('/', function (req, res, next) {
-    res.json({type: 'project'})
+    Project.findAll().then(function (data) {
+        res.json(data)
+    })
 });
 
 /**
  * 新建project
+ * @body data:{name}
  * @return 新生成的project
  */
 router.post('/', function (req, res, next) {
-    res.json({type: 'project'})
+    Project.create({
+        name: req.body.name
+    }).then(function () {
+        res.json(data)
+    }).catch(function (e) {
+        res.json({
+            error: 'false:' + e.toString()
+        })
+    })
 });
 
 /**
  * 修改一个project(部分信息)
- * @param projectId projectId
+ * @param projectId
+ * @body data : {name}
  * @return 修改后的project
  */
 router.patch('/:projectId', function (req, res, next) {
@@ -33,7 +45,17 @@ router.patch('/:projectId', function (req, res, next) {
  * @return 修改后的project
  */
 router.delete('/:projectId', function (req, res, next) {
-    res.json({type: 'project'})
+    Project.destroy({
+        where: {
+            id: req.params.projectId
+        }
+    }).then(function () {
+        res.json(data)
+    }).catch(function (e) {
+        res.json({
+            error: 'false:' + e.toString()
+        })
+    })
 });
 
 module.exports = router;
